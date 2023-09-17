@@ -1,3 +1,4 @@
+import { Modal } from './components/Modal';
 import { LargeAuthorListItem } from './components/authors/LargeListItems';
 import { SmallAuthorListItem } from './components/authors/SmallListItems';
 import { LargeBookListItem } from './components/books/LargeListItems';
@@ -10,31 +11,9 @@ import { books } from './data/books';
 function App() {
 	return (
 		<>
-			<NumberedList
-				items={books}
-				sourceName={'book'}
-				ItemComponent={SmallBookListItem}
-			/>
-			<RegularList
-				items={books}
-				sourceName={'book'}
-				ItemComponent={SmallBookListItem}
-			/>
-			<RegularList
-				items={books}
-				sourceName={'book'}
-				ItemComponent={LargeBookListItem}
-			/>
-			<RegularList
-				items={authors}
-				sourceName={'author'}
-				ItemComponent={SmallAuthorListItem}
-			/>
-			<RegularList
-				items={authors}
-				sourceName={'author'}
-				ItemComponent={LargeAuthorListItem}
-			/>
+			<Modal>
+				<LargeBookListItem book={books[0]} />
+			</Modal>
 		</>
 	);
 }
